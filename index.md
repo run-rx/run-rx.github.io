@@ -30,9 +30,10 @@ In the directory containing your project (often your git root), run:
     rx init
 
 This will prompt you to log in (or create an account) and allocate a machine
-in the cloud for you to use. It may take several minutes to allocate a
-machine, copy your source code, and install any packages (depending on your
-project).
+in the cloud for you to use. Then it will copy your project from your local
+machine to the cloud instance and install any packages that your project needs.
+
+It may take several minutes to allocate a machine, copy your source code, and install packages (depending on your project).
 
 Once rx finishes initializing, you can run any command on your remote worker
 by prefixing it with "rx":
