@@ -1,14 +1,15 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
 
-rx is a command-line tool to help make remote execution easy. Imagine a cloud
-instance that is already set up, where packages are already installed, your
-code is already available, and output is automatically synced back to your
-local device.
+rx is a command-line tool to help make remote execution easy.
+
+When you run rx it creates a private hosted environment in the cloud where all
+of your source code is automatically synced and any packages you need are
+installed. It automatically syncs output back to your machine and syncs local
+changes to your cloud instance.
+
+Right now rx is free to use, please give it a try and [let us know](mailto:eng@run-rx.com) what you think!
 
 ## Installation
 
@@ -42,10 +43,14 @@ by prefixing it with "rx":
     rx ps ax
     rx 'echo $PATH > my-path.txt'
 
+Check out the [getting-started](https://github.com/run-rx/getting-started) repository for more examples.
+
+## Feedback
+
 Feel free to [file an issue](https://github.com/run-rx/rx/issues) if you have
 any questions or problems!
 
-# Current limitations
+## Current limitations
 
 * stdin is not yet supported. This means that, if a command prompts for input,
   it'll just hang until you kill it. In particular, remember to pass `-y` to
