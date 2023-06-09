@@ -8,7 +8,12 @@ nav_order: 2
 
 # Documentation
 
-Welcome to the documentation for rx!
+rx is a command-line tool that makes it easy to run code remotely.
+
+To get started, check out [installation](/docs/install) or
+[getting started](/getting-started) sections.
+
+Other documentation:
 
 * [Available subcommands](/docs/commands)
 * [How to configure a remote worker](/docs/config)

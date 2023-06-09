@@ -3,8 +3,10 @@ layout: page
 title: Python
 permalink: /docs/python/
 parent: Documentation
-nav_order: 4
+nav_order: 5
 ---
+
+# Python language support
 
 rx provides built-in support for Python projects. If you use a
 [Python image](https://hub.docker.com/_/python), rx will set up a virtual

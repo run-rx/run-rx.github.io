@@ -3,7 +3,7 @@ layout: page
 title: Configuration
 permalink: /docs/config/
 parent: Documentation
-nav_order: 2
+nav_order: 3
 ---
 
 # Creating a remote worker
