@@ -6,6 +6,8 @@ parent: Getting Started
 nav_order: 1
 ---
 
+# Hello, world!
+
 Welcome to rx! If you haven't already, create a directory you'd like to use
 (or clone the [getting-started](https://github.com/run-rx/getting-started)
 repository) and run `rx init`.

@@ -6,12 +6,14 @@ parent: Getting Started
 nav_order: 4
 ---
 
+# Configuring your remote machine
+
 rx gives you a lot of flexibility in terms of RAM, disk, CPU, and GPU options
 on your remote machine. (Or, at least, it will!)
 
-You can check out your current configuration by looking at .rx/remotes/default.
-When you run `rx init`, rx uses that to provision a bog-standard Python 3.11
-instance.
+You can check out your current configuration by looking at
+_.rx/remotes/default_. When you run `rx init`, rx uses that to provision a
+bog-standard Python 3.11 instance.
 
 However, the files in .rx/remotes are simply starter templates and you can
 create any configuration you want.
@@ -36,16 +38,16 @@ Create a configuration that uses Python 3.7 by creating a file called
 Now tell rx that you want to use this configuration by running `rx init`
 again, this time with the `--remote` flag:
 
-  $ rx init --remote=py37
+    $ rx init --remote=py37
 
 Now if you run this script, you should see:
 
-  $ rx python 04-remote-config.py
-  Some Python projects:
-  Traceback (most recent call last):
-    File "04-remote-config.py", line 44, in <module>
-      print(proj.removesuffix('Py'))
-  AttributeError: 'str' object has no attribute 'removesuffix'
+    $ rx python 04-remote-config.py
+    Some Python projects:
+    Traceback (most recent call last):
+      File "04-remote-config.py", line 44, in <module>
+        print(proj.removesuffix('Py'))
+    AttributeError: 'str' object has no attribute 'removesuffix'
 
 To upgrade to Python 3.11, run `rx init` again without any flags and it'll
 go back to using the config `default` is symlinked to. Now it prints:
