@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Python
-permalink: /python/
+permalink: /docs/python/
+parent: Documentation
+nav_order: 4
 ---
 
 rx provides built-in support for Python projects. If you use a

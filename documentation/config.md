@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Configuration
-permalink: /config/
+permalink: /docs/config/
+parent: Documentation
+nav_order: 2
 ---
 
 # Creating a remote worker

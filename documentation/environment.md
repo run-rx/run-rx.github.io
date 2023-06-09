@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Environment
-permalink: /env/
+permalink: /docs/env/
+parent: Documentation
+nav_order: 3
 ---
 
 There are several standard features of the remote machine environment.

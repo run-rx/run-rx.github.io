@@ -2,7 +2,7 @@
 layout: home
 ---
 
-rx is a command-line tool to help make remote execution easy.
+rx is a command-line tool to make remote execution easy.
 
 When you run rx it creates a private hosted environment *on AWS* for
 your project. It sets up a container with your source code and installs

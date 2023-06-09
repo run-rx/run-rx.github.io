@@ -27,7 +27,7 @@ url: "https://run-rx.github.io/"
 github_username:  run-rx
 
 # Build settings
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
 

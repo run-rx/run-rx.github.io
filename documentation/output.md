@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Output
-permalink: /output/
+permalink: /docs/output/
+parent: Documentation
+nav_order: 5
 ---
 
 You may want access to artifacts that your program produces: binaries, images,

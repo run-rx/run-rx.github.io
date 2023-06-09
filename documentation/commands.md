@@ -1,7 +1,9 @@
 ---
 layout: page
 title: Subcommands
-permalink: /commands/
+permalink: /docs/commands/
+parent: Documentation
+nav_order: 1
 ---
 
 # init
