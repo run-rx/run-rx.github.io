@@ -27,9 +27,10 @@ url: "https://run-rx.github.io/"
 github_username:  run-rx
 
 # Build settings
-theme: just-the-docs
+remote_theme: "just-the-docs/just-the-docs"
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
