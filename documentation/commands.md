@@ -24,13 +24,17 @@ Options:
   [config](/config) docs for more info.
 * `--dry-run`: prints the files that will be uploaded, without actually
   uploading them.
+* `--quiet`: `init` is very chatty by default and asks the user to confirm
+  that they want to proceed after each step. If you have used `rx` before,
+  you can use `--quiet` to skip all the confirmations.
 
 Running `rx init` a second time in a directory will shut down the current
 remote machine and start a new one from scratch.
 
 ## run
 
-This is the default command if nothing else is specified. It runs a command on the existing remote worker.
+This is the default command if another subcommand isn't found. It runs a
+command on the existing remote worker.
 
     $ rx run ls
     $ # Equivalent to:

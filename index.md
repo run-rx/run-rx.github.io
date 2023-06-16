@@ -4,13 +4,17 @@ layout: home
 
 rx is a command-line tool to make remote execution easy.
 
-When you run rx it creates a private hosted environment *on AWS* for
-your project. It sets up a container with your source code and installs
-dependencies for you. It automatically syncs local changes to your cloud
-instance and syncs outputs back to your local machine.
+When you run rx it takes care of a bunch of configuration on your behalf:
 
-The `rx` binary is a thin client and does not run commands on your local
-machine: it sends them to your cloud instance and runs them there.
+* It creates a private hosted environment for your project in the cloud.
+* It copies your source code into that environment.
+* It installs any dependencies your project needs.
+
+Then, every time you run a command, it automatically syncs local changes to
+your cloud instance and syncs outputs back to your local machine.
+
+*The `rx` binary is a thin client and does not run commands on your local
+machine: it sends them to your cloud instance and runs them there.*
 
 Right now rx is free to use, so please give it a try and [let us know](mailto:eng@run-rx.com) what you think!
 

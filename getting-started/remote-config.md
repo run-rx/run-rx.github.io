@@ -46,8 +46,8 @@ Now if you run this script, you should see:
     Some Python projects:
     Traceback (most recent call last):
       File "04-remote-config.py", line 44, in <module>
-        print(proj.removesuffix('Py'))
-    AttributeError: 'str' object has no attribute 'removesuffix'
+        print(proj.removeprefix('Py'))
+    AttributeError: 'str' object has no attribute 'removeprefix'
 
 To upgrade to Python 3.11, run `rx init` again without any flags and it'll
 go back to using the config `default` is symlinked to. Now it prints:

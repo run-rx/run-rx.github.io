@@ -13,14 +13,6 @@ rx is a command-line tool that makes it easy to run code remotely.
 To get started, check out [installation](/docs/install) or
 [getting started](/getting-started) sections.
 
-Other documentation:
-
-* [Available subcommands](/docs/commands)
-* [How to configure a remote worker](/docs/config)
-* [Info about the environment on the remote host](/docs/environment)
-* [Python support](/docs/python)
-* [Output file handling](/docs/output)
-
 ## Feedback
 
 Feel free to [file an issue](https://github.com/run-rx/rx/issues) if you have
