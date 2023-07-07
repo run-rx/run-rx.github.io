@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# Documentation
+# Welcome to rx
 
 rx is a command-line tool to make remote execution easy. It integrates with
 whatever tools you're currently using and gives you a long-running VM in the
