@@ -14,8 +14,6 @@ a virtual environment:
 
     $ mkdir getting-started
     $ cd getting-started
-    $ python -m venv .venv
-    $ source .venv/bin/activate
 
 Install rx by running:
 
@@ -27,6 +25,11 @@ Finally, get this directory mirrored on a remote machine by initializing it
 with rx:
 
     $ rx init
+
+This sets up rx in the current directory, similar to "git init". It will
+prompt you to log in and/or create an rx account. Then it will set up a
+machine for you in the cloud and copy over any local files (although there
+aren't any yet).
 
 Now you're ready to get started with
 [hello world](/getting-started/hello-world).
