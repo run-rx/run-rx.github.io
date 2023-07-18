@@ -8,9 +8,8 @@ nav_order: 2
 
 # Getting started guide
 
-Welcome to rx! This section contains a series of examples to demonstate using
-rx. To get started, create a directory to use for this tutorial and set up
-a virtual environment:
+Welcome to rx! The getting started guide provides interactive examples to
+demonstate using rx. To start, create a directory to use for this tutorial:
 
     $ mkdir getting-started
     $ cd getting-started
@@ -19,7 +18,7 @@ Install rx by running:
 
     $ pip install run-rx
 
-See the [install section](/docs/install) if you need more info.
+See the [install section](/docs/install) for more info.
 
 Finally, get this directory mirrored on a remote machine by initializing it
 with rx:

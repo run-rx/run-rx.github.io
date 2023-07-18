@@ -55,7 +55,7 @@ This writes the current time to _timestamps/now.txt_. Try running this script on
 
 You can see that rx copied the output back to your local directory.
 
-Note that rx-out is a good place for intermediate outputs, as the rest of
+Note that _rx-out_ is a good place for intermediate outputs, as the rest of
 the remote directory is reset to exactly mirror your local machine before each
 command. This has some subtleties, check out the documentation on
 [outputs](/docs/output) for more info.

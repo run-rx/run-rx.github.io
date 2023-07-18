@@ -19,7 +19,7 @@ However, the files in .rx/remotes are simply starter templates and you can
 create any configuration you want.
 
 For example, `removeprefix` is a string method added in Python 3.9. Try
-creating a file that uses it:
+creating a file, _list-projects.py_ that uses it:
 
     PY_PROJECTS = ['PyTorch', 'PyPi', 'PyMongo']
     print('Some Python projects:')
@@ -38,21 +38,21 @@ Create a configuration that uses Python 3.7 by creating a file called
 Now tell rx that you want to use this configuration by running `rx init`
 again, this time with the `--remote` flag:
 
-    $ rx init --remote=py37
+    $ rx init --remote=my-py37
 
 Now if you run this script, you should see:
 
-    $ rx python 04-remote-config.py
+    $ rx python list-projects.py
     Some Python projects:
     Traceback (most recent call last):
-      File "04-remote-config.py", line 44, in <module>
+      File "list-projects.py", line 4, in <module>
         print(proj.removeprefix('Py'))
     AttributeError: 'str' object has no attribute 'removeprefix'
 
 To upgrade to Python 3.11, run `rx init` again without any flags and it'll
 go back to using the config `default` is symlinked to. Now it prints:
 
-    $ rx python 04-remote-config.py
+    $ rx python list-projects.py
     Some Python projects:
     Torch
     Pi
