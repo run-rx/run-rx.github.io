@@ -18,7 +18,7 @@ Install rx by running:
 
     $ pip install run-rx
 
-See the [install section](/docs/install) for more info.
+See the [install docs](/docs/install) for more info.
 
 Finally, get this directory mirrored on a remote machine by initializing it
 with rx:
