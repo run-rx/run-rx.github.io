@@ -14,9 +14,9 @@ environment on your worker based on that file.
 
 ## Pip
 
-To automatically use Pip, the Docker image you chose must have Python
-interpreter installed (version 3.7+). Consider using one of the
-[Python images](https://hub.docker.com/_/python). By deafult, the virtual
+To automatically keep a pip environment up-to-date, the Docker image you chose
+must have Python interpreter installed (version 3.7+). Consider using one of
+the [Python images](https://hub.docker.com/_/python). By deafult, the virtual
 environment is in _/root/venv_ on your worker and is activated prior to rx
 running any commands.
 
@@ -34,15 +34,15 @@ prefix the `PATH` with _/root/venv_.
 
 ## Conda
 
-To automatically use Conda, the Docker image you chose must have Conda
-installed. Consider using the rx private registry's Conda image by specifying
-in your [config](/docs/config):
+To automatically keep a Conda environment up-to-date, the Docker image you
+choose must have Conda installed. Consider using the rx private registry's
+Conda image by specifying in your [config](/docs/config):
 
     {
       "image": {
         "docker": "conda:3.11-slim",
         "registry": "rx",
-      }
+      },
       "hardware": {
         "processor": "gpu",
       }
