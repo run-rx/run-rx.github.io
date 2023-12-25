@@ -55,7 +55,9 @@ a binary with the same name as another rx command. For example:
 
 ## stop
 
-This will stop the current machine you're using. This stores your current work, so you can pick it up on a new machine by simply running any command from your workspace.
+This will stop the current machine you're using. This stores your current work,
+so you can pick it up on a new machine by simply running any command from your
+workspace.
 
 For example, suppose you create a file with `rx touch foo` and then shut
 down the worker with `rx stop`. You can then run any command (e.g., `rx ls`)
@@ -90,9 +92,7 @@ in the current month.
 
 Prints the current version of the client you're using.
 
-    $ rx version
-
 ## workspace-info
 
-Gets info about your current workspace. Currently this only shows whether the
-workspace was provisioned on a GPU machine.
+Gets info about your current workspace. This returns a yaml config of the
+workspace for this rx root.

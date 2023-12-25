@@ -9,7 +9,7 @@ nav_order: 4
 # Configuring your remote machine
 
 rx gives you a lot of flexibility in terms of RAM, disk, CPU, and GPU options
-on your remote machine. (Or, at least, it will!)
+on your remote machine.
 
 You can check out your current configuration by looking at
 _.rx/remotes/default_. When you run `rx init`, rx uses that to provision a
@@ -58,8 +58,8 @@ go back to using the config `default` is symlinked to. Now it prints:
     Pi
     Mongo
 
-In the future these remote config files will be used to specify hardware
-requirements, too.
+You can always see what config the workspace is using by running
+`rx workspace-info`.
 
 Now you know the basics of how to use rx. Check out the other [docs](/docs) for
 more details!

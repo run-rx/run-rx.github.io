@@ -17,17 +17,10 @@ For example, try redirecting output to a file:
 
     $ rx 'date > my-date'
     Created outputs:
-      rx-out/my-date
+      my-date
 
 Note the quotes around the command: if you do not quote it, your local shell
 will grab the redirect before it can be sent to the remote machine!
-
-If you run `ls` on the _rx-out_ directory (locally or via rx), you can see it
-now contains the output of your command.
-
-_rx-out_ is a special output directory that we encourage you to write files to.
-However, rx will also make a best-effort attempt to "sweep" any other outputs
-that were created into _rx-out_.
 
 Create a file named _output.py_ containing the following Python script:
 
@@ -46,18 +39,15 @@ Create a file named _output.py_ containing the following Python script:
     if __name__ == '__main__':
       main()
 
-This writes the current time to _timestamps/now.txt_. Try running this script on rx:
+This writes the current time to _timestamps/now.txt_. Try running this script on
+rx:
 
     $ rx python output.py
     Wrote timestamps/now.txt
     Created outputs:
-      rx-out/timestamps/now.txt
+      timestamps/now.txt
 
-You can see that rx copied the output back to your local directory.
-
-Note that _rx-out_ is a good place for intermediate outputs, as the rest of
-the remote directory is reset to exactly mirror your local machine before each
-command. This has some subtleties, check out the documentation on
-[outputs](/docs/output) for more info.
+You can see that rx copied the output back to your local directory. Check out
+the documentation on [outputs](/docs/output) for more info.
 
 Next, [requirements](/getting-started/requirements)!

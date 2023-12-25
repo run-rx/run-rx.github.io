@@ -38,8 +38,10 @@ You can upgrade anytime with:
 ## Running from source
 
 You can also check out the source code for rx on
-[GitHub](https://github.com/run-rx/rx). You will need to install dependencies and then generate the protobufs with:
+[GitHub](https://github.com/run-rx/rx). You will need to install dependencies
+and then generate the protobufs with:
 
+    $ pip install requirements_dev.txt
     $ python -m grpc_tools.protoc -I. \
       --python_out=. --pyi_out=. --grpc_python_out=. \
       rx/proto/rx.proto
@@ -50,7 +52,7 @@ Then use:
 
 ## Running tests
 
-To run tests, install the test requirements and then use pytest:
+To run tests, install the dev requirements and then use the proided script:
 
-    $ pip install -r test_requirements.txt
-    $ PYTHONPATH=. pytest
+    $ pip install -r requirements_dev.txt
+    $ python run_tests.py

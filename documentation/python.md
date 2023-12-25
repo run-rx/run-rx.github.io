@@ -8,9 +8,9 @@ nav_order: 5
 
 # Python language support
 
-rx provides built-in support for pip and conda Python projects. If you have
-a requirements.txt or environment.yml file, rx will set up an
-environment on your worker based on that file.
+rx provides built-in support for Python projects that use pip and/or conda for
+dependency management. If you have a requirements.txt or environment.yml file,
+rx will automatically set up an environment on your worker based on that file.
 
 ## Pip
 
@@ -35,18 +35,14 @@ prefix the `PATH` with _/root/venv_.
 ## Conda
 
 To automatically keep a Conda environment up-to-date, the Docker image you
-choose must have Conda installed. Consider using the rx private registry's
-Conda image by specifying in your [config](/docs/config):
+choose must have Conda installed. Consider using the rx's own Conda-optimized
+container by specifying in your [config](/docs/config):
 
     {
       "image": {
-        "docker": "conda:3.11-slim",
-        "registry": "rx",
+        "repository": "runrx/conda",
       },
       "hardware": {
         "processor": "gpu",
       }
     }
-
-This Conda install is based on the python:3.11-slim docker image, but with
-Conda and GPU support.
