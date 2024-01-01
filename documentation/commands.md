@@ -16,8 +16,7 @@ an "init" binary on the remote host.
 
 Print help about the available commands.
 
-Run `rx help <subcommand>` to see a specific command's help info from the
-command line.
+Run `rx help <subcommand>` to see a specific command's help info.
 
 ## init
 
@@ -29,10 +28,10 @@ Options:
 
 * `--remote`: specifies a remote configuration file to use. See
   [config](/config) docs for more info.
-* `--dry-run`: prints the files that will be uploaded, without actually
+* `--dry-run`: prints the files that will be uploaded without actually
   uploading them.
-* `--quiet`: `init` is very chatty by default and asks the user to confirm
-  that they want to proceed after each step. If you have used `rx` before,
+* `--quiet`: by default, `rx` is very chatty and asks the user to confirm
+  that they want to proceed after each step. If you have used `rx` before
   you can use `--quiet` to skip all the confirmations.
 
 Running `rx init` a second time in a directory will shut down the current
@@ -55,7 +54,7 @@ a binary with the same name as another rx command. For example:
 
 ## stop
 
-This will stop the current machine you're using. This stores your current work,
+This will stop the current machine you're using. This stores your current work
 so you can pick it up on a new machine by simply running any command from your
 workspace.
 
@@ -68,7 +67,6 @@ and rx will provision a new worker with your saved state:
     Your workspace was stowed, please stand by while it is set up on a new machine.
     .......
     Done! Please rerun this command to use your newly restored workspace.
-    $ # Try the command again on the new machine
     $ rx ls
     foo
 
@@ -95,4 +93,4 @@ Prints the current version of the client you're using.
 ## workspace-info
 
 Gets info about your current workspace. This returns a yaml config of the
-workspace for this rx root.
+workspace for this rx root, plus all commands you've run this month.

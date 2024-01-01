@@ -37,12 +37,12 @@ you could create a file _/path/to/rxroot/my-rx-remotes/vanilla-ubuntu.yaml_:
 
 Then run `rx init` using the `--remote` option:
 
-    $ rx init --remote=my-rx-remotes/vanilla-ubuntu.json
+    $ rx init --remote=my-rx-remotes/vanilla-ubuntu.yaml
 
 ### Limitations
 
 You can use any publicly-available Docker image. If you'd like to use a
-private image, please [file an issue](https://github.com/run-rx/rx/issues).
+private image, please [let us know](https://github.com/run-rx/rx/issues).
 
 At the moment, there is a cap of 8GB on image size. Again, please
 [email us](mailto:eng@run-rx.com) if you'd like to use a larger image.

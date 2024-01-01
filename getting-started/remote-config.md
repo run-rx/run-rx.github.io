@@ -15,7 +15,7 @@ You can check out your current configuration by looking at
 _.rx/remotes/default_. When you run `rx init`, rx uses that to provision a
 bog-standard Python 3.11 instance.
 
-However, the files in .rx/remotes are simply starter templates and you can
+However, the files in _.rx/remotes_ are simply starter templates and you can
 create any configuration you want.
 
 For example, `removeprefix` is a string method added in Python 3.9. Try
@@ -62,4 +62,4 @@ You can always see what config the workspace is using by running
 `rx workspace-info`.
 
 Now you know the basics of how to use rx. Check out the other [docs](/docs) for
-more details!
+more details or contact us at hello@run-rx.com with any questions!

@@ -30,7 +30,7 @@ See the
 example for more info on _requirements.txt_.
 
 Pip environments have the environment variable `VIRTUAL_ENV` set and
-prefix the `PATH` with _/root/venv_.
+prefix the `PATH` with _/root/venv/bin_.
 
 ## Conda
 
@@ -38,11 +38,8 @@ To automatically keep a Conda environment up-to-date, the Docker image you
 choose must have Conda installed. Consider using the rx's own Conda-optimized
 container by specifying in your [config](/docs/config):
 
-    {
-      "image": {
-        "repository": "runrx/conda",
-      },
-      "hardware": {
-        "processor": "gpu",
-      }
-    }
+    image:
+      repository: 'runrx/conda'
+    remote:
+      hardware:
+        processor: 'gpu'

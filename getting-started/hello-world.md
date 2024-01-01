@@ -35,8 +35,7 @@ cloud, add "rx" before the python command:
     Hello world, I am getting-started.rx
 
 Congratulations, you just ran a Python script remotely! Try changing this
-script to print "Goodbye from <hostname>" and run `rx python hello-world.py`
-again:
+script to print "Goodbye from &lt;hostname&gt;" and run `rx python hello-world.py` again:
 
     $ rx python hello-world.py
     Goodbye from getting-started.rx!

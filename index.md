@@ -29,7 +29,8 @@ less than five minutes.
 *Note: the `rx` binary is a thin client and does not run commands on your local
 machine: it sends them to your cloud instance and runs them there.*
 
-Right now rx is free to use, so please give it a try and [let us know](mailto:eng@run-rx.com) what you think!
+rx is currently in beta, so please give it a try and
+[let us know](mailto:eng@run-rx.com) what you think!
 
 ## Installation
 
@@ -60,9 +61,10 @@ install packages (depending on your project).
 Once rx finishes initializing, you can run any command on your remote worker
 by prefixing it with "rx":
 
-    rx python my-script.py
-    rx ps ax
-    rx 'echo $PATH > my-path.txt'
+    $ rx python my-script.py
+    $ rx ps ax
+    $ # Use single quotes to prevent bash from grabbing redirects/resolving env vars
+    $ rx 'echo $PATH > my-path.txt'
 
 Check out the [getting-started](/getting-started/) section for more examples.
 
