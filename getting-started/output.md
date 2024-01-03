@@ -23,6 +23,11 @@ Note the quotes around the command: if you do not quote it, your local shell
 will grab the redirect before it can be sent to the remote machine!
 
 Now run `ls` and you can see that rx copied the output back to your local
-directory. Check out the documentation on [outputs](/docs/output) for more info.
+directory:
 
-Next, [requirements](/getting-started/requirements)!
+    $ ls
+    hello-world.py    my-date
+
+Check out the documentation on [outputs](/docs/output) for more info.
+
+Next, we'll try [adding some dependencies](/getting-started/requirements)!

@@ -27,18 +27,16 @@ creating a file, _list-projects.py_ that uses it:
       print(proj.removeprefix('Py'))
 
 Create a configuration that uses Python 3.7 by creating a file called
-`my-py37` containing:
+`my-py37.yaml` containing:
 
-    {
-      "image": {
-        "docker": "python:3.7-slim"
-      }
-    }
+    image:
+      repository: "python"
+      tag: "3.7-slim"
 
 Now tell rx that you want to use this configuration by running `rx init`
 again, this time with the `--remote` flag:
 
-    $ rx init --remote=my-py37
+    $ rx init --remote=my-py37.yaml
 
 Now if you run this script, you should see:
 

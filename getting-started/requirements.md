@@ -14,27 +14,29 @@ and install any packages that they need.
 Try this out by creating a Python file that depends on an uninstalled package,
 `art`:
 
-    import sys
+```
+import sys
 
-    import art
+import art
 
-    def main():
-      if len(sys.argv) < 2:
-        print('You must pass in a string to print.')
-        return
-      art.tprint(' '.join(sys.argv[1:]))
+def main():
+  if len(sys.argv) < 2:
+    print('You must pass in a string to print.')
+    return
+  art.tprint(' '.join(sys.argv[1:]))
 
-    if __name__ == '__main__':
-      main()
+if __name__ == '__main__':
+  main()
+```
 
 Try running this script with rx:
 
     $ rx python reqs.py 'more cowbell'
 
-This will print a ModuleNotFoundError, because `art` isn't found.
+This will print a `ModuleNotFoundError`, because `art` isn't found.
 
-To install the `art` package remotely, open up _requirements.txt_ (locally)
-and add a line:
+To install the `art` package remotely, create a _requirements.txt_ file
+(locally) and add a line:
 
     art==5.8
 
