@@ -8,56 +8,100 @@ nav_order: 4
 
 # Configuring your remote machine
 
-rx gives you a lot of flexibility in terms of RAM, disk, CPU, and GPU options
-on your remote machine.
+rx gives you a lot of flexibility in terms of configuring your remote machine.
+You can install any tools or dependencies you need, then store the state and
+share it with anyone you want.
 
-You can check out your current configuration by looking at
-_.rx/remotes/default_. When you run `rx init`, rx uses that to provision a
-bog-standard Python 3.11 instance.
+For example, suppose our program has a critical dependency on the `fortune`
+binary. If we try running `fortune` on the remote machine`, we can see that it's
+not installed by default:
 
-However, the files in _.rx/remotes_ are simply starter templates and you can
-create any configuration you want.
+    $ rx fortune
+    /bin/bash: line 1: fortune: command not found
 
-For example, `removeprefix` is a string method added in Python 3.9. Try
-creating a file, _list-projects.py_ that uses it:
+We can install it from the package manager with:
 
-    PY_PROJECTS = ['PyTorch', 'PyPi', 'PyMongo']
-    print('Some Python projects:')
-    for proj in PY_PROJECTS:
-      print(proj.removeprefix('Py'))
+    $ # The stripped-down container we start with starts with and empty package
+    $ # index, so start by filling it in.
+    $ rx apt-get update
+    $ rx apt-get install fortune
 
-Create a configuration that uses Python 3.7 by creating a file called
-`my-py37.yaml` containing:
+Now we can run `fortune`. However, it's installed to /usr/games, which isn't on
+the PATH, so we have to fully-specify its path:
+
+    $ /usr/games/fortune
+    Familiarity breeds contempt -- and children.
+      		          -- Mark Twain
+
+That's great, but we don't want to have to install it every time we init a
+workspace! To commit the current state of our workspace, run:
+
+    $ rx ws commit
+    Storing your workspace...
+    Pushed layer cb9317ff7c32: : 23501824 bytes [00:00, 32461083.90 bytes/s]
+    Your remote machine's state has been saved.
+
+    If you'd like to initialize a new workspace with this state, use the following lines in your config:
 
     image:
-      repository: "python"
-      tag: "3.7-slim"
+      registry: registry.run-rx.com
+      repository: your-username/getting-started
+      tag: '20240120'
 
-Now tell rx that you want to use this configuration by running `rx init`
-again, this time with the `--remote` flag:
+Using the info above, create a new rx config, my-rx-config.yaml, in your project
+directory:
 
-    $ rx init --remote=my-py37.yaml
+    image:
+      registry: registry.run-rx.com
+      # Replace these lines with whatever your commit output actually printed.
+      # ---
+      repository: your-username/getting-started
+      tag: '20240120'
+      # ---
+      environment_variables:
+        PATH: /usr/games
 
-Now if you run this script, you should see:
+This is the config from above, plus we add /usr/games to the PATH. (You can set
+any environment variable you want in this section. Note that PATH is
+special-cased to add it to the existing PATH.)
 
-    $ rx python list-projects.py
-    Some Python projects:
-    Traceback (most recent call last):
-      File "list-projects.py", line 4, in <module>
-        print(proj.removeprefix('Py'))
-    AttributeError: 'str' object has no attribute 'removeprefix'
+Let's try creating a new workspace using this as a template. Run:
 
-To upgrade to Python 3.11, run `rx init` again without any flags and it'll
-go back to using the config `default` is symlinked to. Now it prints:
+    $ rx init --remote=my-rx-config.yaml
 
-    $ rx python list-projects.py
-    Some Python projects:
-    Torch
-    Pi
-    Mongo
+Now `fortune` should be installed and on the PATH:
 
-You can always see what config the workspace is using by running
-`rx workspace-info`.
+    $ rx fortune
+    Today is the first day of the rest of your life.
 
-Now you know the basics of how to use rx. Check out the other [docs](/docs) for
-more details or contact us at hello@run-rx.com with any questions!
+By default, any workspace images you create are private to your account. If
+you'd like to share one with someone else, you can give them permission to use
+it with the `set-acls` command:
+
+    $ rx ws set-acls --add-reader=alice  # <-- Their rx username
+
+They cannot change your stored image, but they can save a new version of it to
+their account.
+
+*For enterprise users*, you can easily give access to everyone at your
+organization:
+
+    $ rx ws set-acls --add-reader=wayne-tech.com
+
+For open source projects, you may want to let anyone use the image:
+
+    $ rx ws set-acls --set-visibility=public
+
+This will allow anyone to use your workspace. If you change your mind and want
+to make it private again, run:
+
+    $ rx ws set-acls --set-visibility=private
+
+See more info about permissions in [the docs](/docs/config). You can also
+read more about storing and retreiving workspaces.
+
+This concludes the getting started guide! You can now create a remote workspace,
+use it to develop locally or remotely, and save and share it with others.
+
+For more info, check out the [docs](/docs). If you have any questions, please
+[let us know](https://github.com/run-rx/rx/issues).

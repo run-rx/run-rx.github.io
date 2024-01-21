@@ -8,8 +8,11 @@ nav_order: 2
 
 # Getting started guide
 
-Welcome to rx! The getting started guide provides interactive examples to
-demonstate using rx. To start, create a directory to use for this tutorial:
+Welcome to rx! rx makes it easy to set up, use, and share a remote environment
+while letting you continue to use all of your favorite local tools.
+
+The getting started guide provides interactive examples to get you familiar with
+rx. To begin, create a directory to use for this tutorial:
 
     $ mkdir getting-started
     $ cd getting-started
