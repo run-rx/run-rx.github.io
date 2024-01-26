@@ -13,7 +13,7 @@ You can install any tools or dependencies you need, then store the state and
 share it with anyone you want.
 
 For example, suppose our program has a critical dependency on the `fortune`
-binary. If we try running `fortune` on the remote machine`, we can see that it's
+binary. If we try running `fortune` on the remote machine, we can see that it's
 not installed by default:
 
     $ rx fortune
@@ -29,7 +29,7 @@ We can install it from the package manager with:
 Now we can run `fortune`. However, it's installed to /usr/games, which isn't on
 the PATH, so we have to fully-specify its path:
 
-    $ /usr/games/fortune
+    $ rx /usr/games/fortune
     Familiarity breeds contempt -- and children.
       		          -- Mark Twain
 
@@ -48,8 +48,8 @@ workspace! To commit the current state of our workspace, run:
       repository: your-username/getting-started
       tag: '20240120'
 
-Using the info above, create a new rx config, my-rx-config.yaml, in your project
-directory:
+Using the info above, create a new rx config, _my-rx-config.yaml_, in your
+project directory:
 
     image:
       registry: registry.run-rx.com
@@ -92,7 +92,7 @@ For open source projects, you may want to let anyone use the image:
 
     $ rx ws set-acls --set-visibility=public
 
-This will allow anyone to use your workspace. If you change your mind and want
+This will allow anyone to read your workspace. If you change your mind and want
 to make it private again, run:
 
     $ rx ws set-acls --set-visibility=private
