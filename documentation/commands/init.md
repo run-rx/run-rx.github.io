@@ -21,17 +21,21 @@ When you initially run `rx init`, it will create a default _.rxignore_ file
 with some standard paths. You can modify this or create your own, then check
 your work with `--dry-run`.
 
-## Using a custom remote configuration
+## Remote machine setup
 
 By default, rx will examine your project and attempt to determine what
 languages/tools you're using, then set them up on the remote machine. For
-example, if you have a requirements.txt file or a package.json file, rx will
-run `pip install` or `npm install`, respectively.
+example, if you have a _requirements.txt_ file, rx will make sure Python is
+installed on the machine and run `pip install` on your project. If your project
+has a _package.json_ file, rx will install node and run `npm install` (and so
+on).
 
-This auto-detected config is written to a file in _.rx/remotes/_, which
+This auto-detected toolchain is written to a file in _.rx/remotes/_, which
 _.rx/remotes/default_ will automatically be symlinked to. When you run
 `rx init`, it first checks for _.rx/remotes/default_ and will use that
 (if it exists) instead of auto-detecting your setup.
+
+## Using a custom remote configuration
 
 You can create your own [custom configuration](/docs/config) and then
 either symlink _.rx/remtoes/default_ to that file or use the `rx init`
