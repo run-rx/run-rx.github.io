@@ -8,7 +8,8 @@ nav_order: 3
 
 # Documentation
 
-rx is a command-line tool that makes it easy to run code remotely.
+rx is a command-line tool that makes it easy to set up, use, and share a remote
+environment while letting you continue to use all of your favorite local tools.
 
 To get started, check out [installation](/docs/install) or
 [getting started](/getting-started) sections.
@@ -20,9 +21,7 @@ any questions or problems!
 
 ## Current limitations
 
-* The flag parsing library is very "grabby" and doesn't like flags it doesn't
-  recognize. Thus, to run a command like `rx ls -l`, you must prevent rx from
-  trying to parse `-l` (not a valid rx flag) by either wrapping the command in
-  `'`s (`rx 'ls -l`') or indicate that rx should stop parsing parameters with
-  `--`: `rx -- ls -l`.
 * All commands are executed under Bash.
+* Bash will grab shell redirects, pipes, and so on before they can be passed to
+  rx. Basically, if you're using a non-alphanumeric character, it will probably
+  work better if you wrap the line in single quotes, e.g.: `rx 'cat f | head'`.

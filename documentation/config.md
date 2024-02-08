@@ -8,26 +8,26 @@ nav_order: 3
 
 # Configuring a Remote Workspace
 
-When you run `rx init`, rx sets up what we call a "workspace," which is a
-Docker container on a remote host. You have a lot of control over how this
-container is set up and configured. This documentation covers using and
-configuring workspaces.
+When you run `rx init`, rx sets up a "workspace," which is a Docker container
+on a remote host. You have a lot of control over how this container is set up
+and configured.
 
 ## The Config File
 
 rx determines the type of container and hardware to use remotely based on the
 contents of a YAML file. If you do not specify a path to a YAML file, rx
-defaults to using the one _.rx/remotes/default_ is symlinked to. By default,
-this is symlinked to _.rx/remotes/python-cpu.yaml_, a container on a standard
-remote machine with a recent version of Python installed.
+defaults to using the one _.rx/remotes/default_ is symlinked to. If this does
+not exist, rx will attempt to detect the tools and languages the project is
+using. If it cannot, it will fallback on a basic machine with a recent version
+of Python installed.
 
-To modify this behavior, you can use a different config file, either by changing
+To modify this behavior you can use a different config file, either by changing
 the target the _default_ symlink points to or by specifying a path on the
 command line:
 
     $ rx init --remote=some/path/to/my/config.yaml
 
-Once a workspace is initialized the config file is not re-read.
+Once a workspace is initialized the remote config file is not re-read.
 
 A config file has two sections:
 
@@ -38,6 +38,7 @@ A config file has two sections:
   * `envrionment_variables`: Key/value pairs of environment variables to set
     for the workspace.
 * `remote`: describes the machine the workspace should be put on.
+  * `toolchain`: which tools your project is using.
   * `hardware`: The CPU, memory, and disk requirements.
     * `processor`: The type of processor needed.
 
@@ -106,23 +107,6 @@ to public:
 
 If you change your mind you can set the visibility back to "private" (the
 default).
-
-## Default Configs
-
-When first run, `rx init` creates several YAML config files in a `.rx` directory
-in your rx root. In particular, it creates a _remotes_ directory that contains
-a couple of built-in configurations:
-
-    project-root/
-      .rx/
-        remotes/
-          default -> python-cpu.yaml
-          python-cpu.yaml
-          python-gpu.yaml
-        trex.run-rx.com/
-          ...
-
-You can add any additional configurations you want.
 
 ## Changing the Docker Image
 
