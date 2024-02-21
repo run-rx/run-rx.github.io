@@ -25,6 +25,7 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://run-rx.github.io/"
 github_username:  run-rx
+ga_tracking: G-Q0X26V35HQ
 
 # Build settings
 remote_theme: "just-the-docs/just-the-docs"
