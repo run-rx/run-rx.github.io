@@ -66,3 +66,34 @@ You can also share the workspace with an organization that you're a member of:
     rx ws set-acls --add-reader=msft
 
 See the [config docs](/docs/config) for more info about setting ACLs.
+
+## open-port
+
+If a workspace is configured to have a certain port open, you can forward it to
+your local machine by running:
+
+    rx ws open-port 12345
+
+This starts a daemon process on your local machine that listens for connections
+on localhost:12345 and forwards requests/responses to your remote workspace.
+
+`open-port` optionally can map the remote port to a different port locally. For
+example, if you have your workspace configured to forward port 4040 but it's
+already being used on your local machine, you can specify:
+
+   rx ws open-port 4040 --local-port=4141
+
+Then all traffic to localhost:4141 will be forwarded to your workspace's
+localhost:4040.
+
+## close-port
+
+To stop forwarding to a local port, call:
+
+    rx ws close-port 4040
+
+## ports
+
+You can list all ports being forwarded with `ports`:
+
+   rx ws ports
