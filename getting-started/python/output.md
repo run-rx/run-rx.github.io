@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Output files
-permalink: /getting-started/output
-parent: Getting Started
-nav_order: 2
+permalink: /getting-started/python/output
+parent: Python
+grand_parent: Getting Started
+nav_order: 1
 ---
 
 # Accessing outputs created remotely
@@ -30,4 +31,5 @@ directory:
 
 Check out the documentation on [outputs](/docs/output) for more info.
 
-Next, we'll try [adding some dependencies](/getting-started/requirements)!
+Next, we'll try
+[adding some dependencies](/getting-started/python/requirements)!

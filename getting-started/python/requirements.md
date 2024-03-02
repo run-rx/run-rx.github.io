@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Python dependencies
-permalink: /getting-started/requirements
-parent: Getting Started
-nav_order: 3
+permalink: /getting-started/python/requirements
+parent: Python
+grand_parent: Getting Started
+nav_order: 2
 ---
 
 # Installing Python dependencies
@@ -54,4 +55,4 @@ Note that you did not even need to install the package locally: rx took care of
 installing packages based on the contents of requirements.txt.
 
 Next section: configuring your
-[remote machine](/getting-started/remote-config).
+[remote machine](/getting-started/python/remote-config).

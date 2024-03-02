@@ -1,9 +1,10 @@
 ---
 layout: page
 title: Remote configuration
-permalink: /getting-started/remote-config
-parent: Getting Started
-nav_order: 4
+permalink: /getting-started/python/remote-config
+parent: Python
+grand_parent: Getting Started
+nav_order: 3
 ---
 
 # Configuring your remote machine

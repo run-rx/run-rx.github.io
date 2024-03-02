@@ -23,19 +23,9 @@ Install rx by running:
 
 See the [install docs](/docs/install) for more info.
 
-Finally, get this directory mirrored on a remote machine by initializing it
-with rx:
+`rx` can be used with any programming language, but this guide is available for
+a few common ones. Feel free to use whichever language you're most comfortable
+with to get started:
 
-    $ rx init
-
-This sets up rx in the current directory, similar to "git init". It will
-prompt you to log in and/or create an rx account. Then it will set up a
-machine for you in the cloud and copy over any local files (although there
-aren't any yet).
-
-Now you're ready to get started with
-[hello world](/getting-started/hello-world).
-
-The full code for this section is also available in the
-[getting-started](https://github.com/run-rx/getting-started) repository on
-GitHub, if you prefer to clone that and run the finished examples.
+* [Node](node)
+* [Python](python)
