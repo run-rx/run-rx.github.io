@@ -17,14 +17,15 @@ To get started, we'll create a simple Express server:
 
 ```
 // my_server.js
-const express = require('express')
-const app = express()
+const express = require('express');
+const app = express();
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.send('Hello World');
 })
 
-app.listen(3000)
+console.log('Listening on localhost:3000...');
+app.listen(3000);
 ```
 
 Create/add the `express` package as a dependency in package.json:
