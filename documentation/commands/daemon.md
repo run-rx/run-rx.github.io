@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ws
-permalink: /docs/commands/ws
+title: daemon
+permalink: /docs/commands/daemon
 parent: Subcommands
 grand_parent: Documentation
 nav_order: 3
